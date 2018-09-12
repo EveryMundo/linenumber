@@ -1,6 +1,6 @@
 {
   "name": "@everymundo/linenumber",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a debugging and testing helper tool that returns the line number in which the function was invoked",
   "main": "index.js",
   "scripts": {
