@@ -4,8 +4,16 @@
   "description": "This is a debugging and testing helper tool that returns the line number in which the function was invoked",
   "main": "index.js",
   "scripts": {
-    "cover": "istanbul cover -x '*.test.js' _mocha",
+    "cover": "LOG_LEVEL=trace nyc -x test --reporter=lcov --reporter=text mocha test --recursive",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "check-lint": "standard *.js lib/*.js test/*.js routes/*.js",
+    "fix-lint": "standard --fix *.js lib/*.js test/*.js routes/*.js",
     "test": "mocha"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
   },
   "keywords": [
     "nodejs",
@@ -16,8 +24,10 @@
   "author": "Daniel Santana <git@danielsantana.net>",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.0.0"
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "standard": "^14.3.1"
   },
   "directories": {
     "test": "test"

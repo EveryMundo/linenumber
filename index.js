@@ -1,13 +1,12 @@
-function linenumber() {
-  const
-    err = new Error(''),
-    { stack } = err,
-    firstI = stack.indexOf('\n', stack.indexOf('\n') + 1),
-    secndI = (stack + '\n').indexOf('\n', firstI + 1),
-    line = stack.substring(firstI, secndI),
-    firstMatch = line.match(/\s+\(?((?:\/|\w:)([^:]+):\d+)/);
+function linenumber () {
+  const err = new Error('')
+  const { stack } = err
+  const firstI = stack.indexOf('\n', stack.indexOf('\n') + 1)
+  const secndI = (stack + '\n').indexOf('\n', firstI + 1)
+  const line = stack.substring(firstI, secndI)
+  const firstMatch = line.match(/\s+\(?((?:\/|\w:)([^:]+):\d+)/)
 
-  return firstMatch[1].split(':').pop();
+  return firstMatch[1].split(':').pop()
 }
 
-module.exports = { linenumber };
+module.exports = { linenumber }

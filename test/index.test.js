@@ -1,11 +1,10 @@
-const { expect } = require('chai');
+const { expect } = require('chai')
 
-describe('server.js', () => {
-  context('on load', () => {
-    it('should export expected functions', () => {
-      const {linenumber} = require('../');
-      const res = linenumber();
-      expect(res).to.equal('7');
-    });
-  });
-});
+describe('linenumber', () => {
+  it('should export expected functions', () => {
+    const { linenumber } = require('../')
+    const res = linenumber()
+
+    expect(res).to.equal('6')
+  })
+})
